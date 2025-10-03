@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Parabéns Mamãe!</title>
+<style>
+
+    body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: auto;
+    
+    /* Fundo com tema de corações */
+    background-color: #ffe5e5;
+    background-image: url('papel.jpg'); /* imagem do coração */
+    background-repeat: no-repeat; /* não repete */
+    background-size: cover; /* ocupa toda a tela */
+    background-position: center; /* centraliza a imagem */
+}
+
+
+    h1 {
+        color: #a41a1a;
+        margin-top: 50px;
+        font-size: 3em;
+    }
+
+    .frase {
+        color: #171616;
+        font-size: 1.5em;
+        margin: 30px auto 20px auto;
+        max-width: 700px;
+    }
+
+    .fotos {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+        margin-bottom: 50px;
+    }
+
+    .fotos img {
+        width: 300px;
+        height: auto;
+        object-fit: cover;
+        border-radius: 20px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .fotos img:hover {
+        transform: scale(1.1);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+    }
+
+    footer {
+        margin: 50px 0;
+        font-size: 1.2em;
+        color: #151515;
+    }
+
+    /* Botão "Amei" */
+    .botao-amei {
+        background-color: #ff3366;
+        color: white;
+        font-size: 1.2em;
+        border: none;
+        padding: 15px 30px;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: transform 0.2s, background-color 0.2s;
+        margin-bottom: 50px;
+    }
+
+    .botao-amei:hover {
+        transform: scale(1.1);
+        background-color: #ff6699;
+    }
+
+    /* Corações flutuantes */
+    .coracao {
+        position: fixed; /* para não afetar rolagem */
+        width: 30px;
+        height: 30px;
+        background-image: url('https://i.ibb.co/QM4FdpT/heart.png'); /* imagem de coração */
+        background-size: cover;
+        opacity: 0.8;
+        animation-name: subir;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+    }
+
+    @keyframes subir {
+        0% { transform: translateY(100vh); opacity: 0.8; }
+        50% { opacity: 1; }
+        100% { transform: translateY(-50px); opacity: 0; }
+    }
+</style>
+</head>
+<body>
+
+<h1>Feliz Aniversário, Mamãe! 💖</h1>
+
+<!-- Primeiro bloco -->
+<div class="frase">
+Mamãe, neste dia especial quero que você saiba o quanto é amada e admirada. Cada abraço seu aquece meu coração, cada sorriso seu ilumina meus dias, e cada palavra sua me dá força para seguir sempre em frente. Você é minha inspiração, meu porto seguro e a pessoa que transforma os momentos simples em lembranças inesquecíveis. Que seu aniversário seja repleto de alegria, amor e sorrisos sinceros, e que cada dia da sua vida seja tão maravilhoso quanto você é para mim. Obrigada por ser minha mãe, minha amiga e meu exemplo de coragem e bondade. Te amo infinitamente, hoje e sempre!
+</div>
+<div class="fotos">
+    <img src="rosa.jpeg" alt="Foto 1">
+</div>
+
+<!-- Segundo bloco -->
+<div class="frase">
+Que seu dia seja repleto de alegria, sorrisos sinceros e momentos inesquecíveis. Você merece toda a felicidade do mundo, hoje e sempre.
+</div>
+<div class="fotos">
+    <img src="montagem.jpeg" alt="Foto 2">
+</div>
+
+<!-- Botão "Amei" -->
+<button class="botao-amei" onclick="clicouAmei()">Amei ❤️</button>
+
+<footer>Com todo meu amor, Kelly ❤️</footer>
+
+<script>
+    // Criar múltiplos corações flutuando
+    for (let i = 0; i < 20; i++) {
+        let heart = document.createElement('div');
+        heart.className = 'coracao';
+        heart.style.left = Math.random() * window.innerWidth + 'px';
+        heart.style.width = 20 + Math.random() * 30 + 'px';
+        heart.style.height = heart.style.width;
+        heart.style.animationDuration = 4 + Math.random() * 6 + 's';
+        heart.style.animationDelay = Math.random() * 5 + 's';
+        document.body.appendChild(heart);
+    }
+
+    // Função do botão "Amei"
+    function clicouAmei() {
+        alert("Que bom que você gostou! 💖");
+    }
+</script>
+
+</body>
+</html>
